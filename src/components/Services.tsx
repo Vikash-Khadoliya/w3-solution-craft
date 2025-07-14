@@ -72,7 +72,7 @@ const Services = () => {
             >
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-primary-light rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <div className="p-3 bg-primary-light rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
                     <service.icon className="h-6 w-6" />
                   </div>
                   <CardTitle className="text-xl font-semibold text-foreground">
@@ -103,8 +103,8 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+        <div className="text-center mt-12 animate-bounce-in" style={{ animationDelay: '0.8s' }}>
+          <Button variant="hero" size="lg" className="animate-glow">
             Get Custom Quote
           </Button>
         </div>

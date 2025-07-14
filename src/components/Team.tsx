@@ -67,10 +67,11 @@ const Team = () => {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member) => (
+          {teamMembers.map((member, index) => (
             <div
               key={member.id}
-              className="group bg-card rounded-lg overflow-hidden border border-border hover:shadow-soft hover:shadow-primary/20 transition-all duration-300"
+              className="group bg-card rounded-lg overflow-hidden border border-border hover:shadow-soft hover:shadow-primary/20 transition-all duration-300 animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Member Photo */}
               <div className="relative overflow-hidden">

@@ -62,9 +62,9 @@ const Hero = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full backdrop-blur-sm animate-bounce"></div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 bg-white/5 rounded-full backdrop-blur-sm animate-bounce delay-1000"></div>
-      <div className="absolute top-1/2 left-20 w-12 h-12 bg-white/5 rounded-full backdrop-blur-sm animate-bounce delay-500"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full backdrop-blur-sm animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-16 h-16 bg-white/5 rounded-full backdrop-blur-sm animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-20 w-12 h-12 bg-white/5 rounded-full backdrop-blur-sm animate-float" style={{ animationDelay: '0.5s' }}></div>
     </section>
   );
 };

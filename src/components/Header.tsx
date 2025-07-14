@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
+import logo from "@/assets/w3-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +19,13 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <div className="flex items-center space-x-3">
+            <img 
+              src={logo} 
+              alt="W3 Software Solutions" 
+              className="h-10 w-10 animate-pulse"
+            />
+            <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               W3 Software Solutions
             </div>
           </div>
@@ -36,9 +43,10 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:flex">
-            <Button variant="hero" size="default">
+          {/* CTA Button & Theme Toggle - Desktop */}
+          <div className="hidden md:flex items-center space-x-3">
+            <ThemeToggle />
+            <Button variant="hero" size="default" className="animate-glow">
               Get Started
             </Button>
           </div>
@@ -69,8 +77,9 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="px-3 pt-2">
-                <Button variant="hero" size="default" className="w-full">
+              <div className="flex items-center space-x-3 px-3 pt-2">
+                <ThemeToggle />
+                <Button variant="hero" size="default" className="flex-1">
                   Get Started
                 </Button>
               </div>
