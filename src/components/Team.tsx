@@ -3,10 +3,10 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const teamMembers = [
   {
     id: 1,
-    name: "Alex Rodriguez",
-    role: "CEO & Full-Stack Developer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    description: "10+ years of experience in building scalable web applications. Specializes in React, Node.js, and cloud architecture.",
+    name: "Vikash Khadoliya",
+    role: "CEO/Co-Founder & Full-Stack Developer",
+    image: "./src/assets/vikash.jpg",
+    description: "Co-founder and full-stack developer with deep expertise in React, Node.js, and cloud solutions. Leads the team in delivering innovative and scalable digital products.",
     social: {
       linkedin: "#",
       github: "#",
@@ -15,10 +15,10 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Sarah Chen",
-    role: "Lead UI/UX Designer",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=400&q=80",
-    description: "Award-winning designer with expertise in user experience and interface design. Creates intuitive and beautiful digital experiences.",
+    name: "Abhay Ghorela",
+    role: "CEO/Co-Founder & Full-Stack Developer",
+    image: "./src/assets/abhay.jpg",
+    description: "Co-founder with expertise in frontend and backend development. Skilled in building interactive web interfaces using modern technologies.",
     social: {
       linkedin: "#",
       github: "#",
@@ -27,28 +27,17 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Michael Johnson",
-    role: "Mobile App Developer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-    description: "Expert in React Native and Flutter development. Has published 20+ apps with millions of downloads across platforms.",
+    name: "Aditya Kumawat",
+    role: "Frontend and WordPress Developer",
+    image: "./src/assets/aditya.jpg",
+    description: "Expert in WordPress development and frontend technologies.",
     social: {
       linkedin: "#",
       github: "#",
       twitter: "#"
     }
   },
-  {
-    id: 4,
-    name: "Emily Davis",
-    role: "Backend Developer",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
-    description: "Specializes in database design, API development, and DevOps. Passionate about building robust and secure backend systems.",
-    social: {
-      linkedin: "#",
-      github: "#",
-      twitter: "#"
-    }
-  }
+  
 ];
 
 const Team = () => {
@@ -66,59 +55,56 @@ const Team = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers.map((member, index) => (
             <div
               key={member.id}
-              className="group bg-card rounded-lg overflow-hidden border border-border hover:shadow-soft hover:shadow-primary/20 transition-all duration-300 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group bg-gradient-to-br from-white/90 to-secondary/40 rounded-3xl border border-border shadow-lg hover:shadow-2xl transition-all duration-500 relative flex flex-col items-center p-6 animate-float"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Member Photo */}
-              <div className="relative overflow-hidden">
+              <div className="relative mb-4">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-32 h-32 object-cover rounded-full border-4 border-primary shadow-xl group-hover:scale-105 transition-transform duration-500 bg-white"
+                  style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Social Links - appear on hover */}
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                  <div className="flex justify-center gap-3">
-                    <a
-                      href={member.social.linkedin}
-                      className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
-                      aria-label={`${member.name} LinkedIn`}
-                    >
-                      <Linkedin className="h-4 w-4 text-primary" />
-                    </a>
-                    <a
-                      href={member.social.github}
-                      className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
-                      aria-label={`${member.name} GitHub`}
-                    >
-                      <Github className="h-4 w-4 text-primary" />
-                    </a>
-                    <a
-                      href={member.social.twitter}
-                      className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
-                      aria-label={`${member.name} Twitter`}
-                    >
-                      <Twitter className="h-4 w-4 text-primary" />
-                    </a>
-                  </div>
+                {/* Social Links - appear on hover, floating above image */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500">
+                  <a
+                    href={member.social.linkedin}
+                    className="p-2 bg-white/90 rounded-full hover:bg-primary hover:text-white shadow transition-colors duration-300 border border-primary/20"
+                    aria-label={`${member.name} LinkedIn`}
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href={member.social.github}
+                    className="p-2 bg-white/90 rounded-full hover:bg-primary hover:text-white shadow transition-colors duration-300 border border-primary/20"
+                    aria-label={`${member.name} GitHub`}
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                  <a
+                    href={member.social.twitter}
+                    className="p-2 bg-white/90 rounded-full hover:bg-primary hover:text-white shadow transition-colors duration-300 border border-primary/20"
+                    aria-label={`${member.name} Twitter`}
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </a>
                 </div>
               </div>
 
               {/* Member Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-1">
+              <div className="flex-1 flex flex-col items-center text-center mt-2">
+                <h3 className="text-xl font-bold text-foreground mb-1">
                   {member.name}
                 </h3>
-                <p className="text-primary font-medium mb-3">
+                <p className="text-primary font-medium mb-2">
                   {member.role}
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                   {member.description}
                 </p>
               </div>

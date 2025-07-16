@@ -17,19 +17,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "hello@w3softwaresolutions.com",
+      value: "Contact@w3softwaresolutions.com",
       description: "Get in touch for project inquiries"
     },
     {
       icon: Phone,
       title: "Call Us",
-      value: "+1 (555) 123-4567",
+      value: "+91-7597881864",
       description: "Mon-Fri from 9am to 6pm"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "123 Tech Street, Digital City",
+      value: "ShivaJi Nager, Pune, 411005",
       description: "Schedule an appointment"
     },
     {
@@ -126,7 +126,7 @@ const Contact = () => {
                   className="group hover:shadow-medium transition-all duration-300 transform hover:scale-105 bg-gradient-card"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 ">
                     <div className="flex items-start gap-4">
                       <div className="p-3 bg-primary-light rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                         <info.icon className="h-5 w-5" />
@@ -135,7 +135,7 @@ const Contact = () => {
                         <h4 className="font-semibold text-foreground mb-1">
                           {info.title}
                         </h4>
-                        <p className="text-primary font-medium mb-1">
+                        <p className="text-primary font-medium mb-1 text-[13px]">
                           {info.value}
                         </p>
                         <p className="text-sm text-muted-foreground">
