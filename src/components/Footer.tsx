@@ -1,36 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { 
-  Github, 
-  Linkedin, 
-  Instagram, 
-  Mail,
-  ArrowUp 
-} from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "https://in.linkedin.com/company/w3-software-solutions", label: "LinkedIn" },
-    { icon: Instagram, href: "https://www.instagram.com/w3softwaresolutions/", label: "Instagram" },
-    { icon: Mail, href: "mailto:web3softwaresolutionsinfo@gmail.com", label: "Email" }
+    {
+      icon: Linkedin,
+      href: "https://in.linkedin.com/company/w3-software-solutions",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/w3softwaresolutions/",
+      label: "Instagram",
+    },
+    {
+      icon: Mail,
+      href: "mailto:web3softwaresolutionsinfo@gmail.com",
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
   ];
 
   const services = [
     "Web Development",
     "Mobile Apps",
     "Custom Software",
-    "UI/UX Design"
+    "UI/UX Design",
   ];
 
   return (
@@ -45,32 +51,43 @@ const Footer = () => {
                 W3 Software Solutions
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-                Transforming ideas into powerful digital solutions. We create websites 
-                and applications that drive business growth and deliver exceptional user experiences.
+                Transforming ideas into powerful digital solutions. We create
+                websites and applications that drive business growth and deliver
+                exceptional user experiences.
               </p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
-                  <Button
+                  <a
                     key={social.label}
-                    variant="ghost"
-                    size="icon"
-                    className="text-gray-300 hover:text-white hover:bg-white/10"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-5 w-5" />
-                  </Button>
+                    <Button
+                      key={social.label}
+                      variant="ghost"
+                      size="icon"
+                      className="text-gray-300 hover:text-white hover:bg-white/10"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </Button>
+                  </a>
                 ))}
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                Quick Links
+              </h3>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a 
-                      href={link.href} 
+                    <a
+                      href={link.href}
                       className="text-gray-300 hover:text-white transition-colors duration-300"
                     >
                       {link.name}
@@ -82,7 +99,9 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                Services
+              </h3>
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service}>
@@ -100,12 +119,18 @@ const Footer = () => {
             <div className="text-gray-300 text-sm">
               © 2024 W3 Software Solutions. All rights reserved.
             </div>
-            
+
             <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors duration-300">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors duration-300">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
+              >
                 Terms of Service
               </a>
               <Button
