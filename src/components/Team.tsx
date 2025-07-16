@@ -5,7 +5,7 @@ const teamMembers = [
     id: 1,
     name: "Vikash Khadoliya",
     role: "CEO/Co-Founder & Full-Stack Developer",
-    image: "./src/assets/vikash.jpg",
+    image: "src/assets/vikash.jpg",
     description: "Co-founder and full-stack developer with deep expertise in React, Node.js, and cloud solutions. Leads the team in delivering innovative and scalable digital products.",
     social: {
       linkedin: "#",
@@ -17,7 +17,7 @@ const teamMembers = [
     id: 2,
     name: "Abhay Ghorela",
     role: "CEO/Co-Founder & Full-Stack Developer",
-    image: "./src/assets/abhay.jpg",
+    image: "src/assets/abhay.jpg",
     description: "Co-founder with expertise in frontend and backend development. Skilled in building interactive web interfaces using modern technologies.",
     social: {
       linkedin: "#",
@@ -29,7 +29,7 @@ const teamMembers = [
     id: 3,
     name: "Aditya Kumawat",
     role: "Frontend and WordPress Developer",
-    image: "./src/assets/aditya.jpg",
+    image: "src/assets/aditya.jpg",
     description: "Expert in WordPress development and frontend technologies.",
     social: {
       linkedin: "#",
