@@ -1,15 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "w3softwaresolutions.com"
-        }
-      ],
-      "destination": "https://www.w3softwaresolutions.com/$1",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
