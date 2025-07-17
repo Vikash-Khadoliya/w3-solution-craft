@@ -157,6 +157,14 @@ export default {
 						opacity: '1',
 						transform: 'scale(1)'
 					}
+				},
+				'scroll-right': {
+					'0%': {
+						transform: 'translateX(0)'
+					},
+					'100%': {
+						transform: 'translateX(-50%)'
+					}
 				}
 			},
 			animation: {
@@ -167,7 +175,8 @@ export default {
 				'glow': 'glow 2s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite',
 				'scale-in': 'scale-in 0.3s ease-out',
-				'bounce-in': 'bounce-in 0.6s ease-out'
+				'bounce-in': 'bounce-in 0.6s ease-out',
+				'scroll-right': 'scroll-right 30s linear infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
