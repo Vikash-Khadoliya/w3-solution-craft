@@ -30,6 +30,7 @@ const Footer = () => {
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
+    { name: "Careers", href: "/careers" },
   ];
 
   const services = [
@@ -122,13 +123,13 @@ const Footer = () => {
 
             <div className="flex items-center gap-6">
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </a>
               <a
-                href="#"
+                href="/terms-of-service"
                 className="text-gray-300 hover:text-white text-sm transition-colors duration-300"
               >
                 Terms of Service
