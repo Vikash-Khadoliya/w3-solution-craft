@@ -1,152 +1,270 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import { Link } from "react-router-dom";
-
-const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    category: "Web Development"
-  },
-  {
-    id: 2,
-    title: "Mobile Banking App",
-    description: "Secure mobile banking application with biometric authentication and real-time transactions.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
-    tech: ["React Native", "Firebase", "Redux", "Biometrics"],
-    category: "Mobile Development"
-  },
-  {
-    id: 3,
-    title: "Healthcare Management System",
-    description: "Comprehensive healthcare platform for patient management, appointments, and medical records.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
-    tech: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-    category: "Web Development"
-  },
-  {
-    id: 4,
-    title: "Real Estate Platform",
-    description: "Property listing and management platform with virtual tours and mortgage calculator.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
-    tech: ["Next.js", "TypeScript", "Prisma", "AWS"],
-    category: "Web Development"
-  },
-  {
-    id: 5,
-    title: "Inventory Management App",
-    description: "Smart inventory tracking system with barcode scanning and automated reordering.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    tech: ["Flutter", "Laravel", "MySQL", "QR Code"],
-    category: "Mobile Development"
-  },
-  {
-    id: 6,
-    title: "Learning Management System",
-    description: "Educational platform with course creation, video streaming, and progress tracking.",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
-    tech: ["React", "Express.js", "MongoDB", "Video.js"],
-    category: "Web Development"
-  }
-];
+import { Badge } from "@/components/ui/badge";
+import { 
+  Code, 
+  Smartphone, 
+  Globe, 
+  Database, 
+  Paintbrush, 
+  Rocket,
+  ArrowRight,
+  Zap,
+  Shield,
+  Users,
+  CheckCircle,
+  Star,
+  Clock,
+  TrendingUp
+} from "lucide-react";
 
 const OurWork = () => {
+  const services = [
+    {
+      icon: Globe,
+      title: "Web Development",
+      description: "Modern, responsive websites that drive results and engage your audience across all devices with cutting-edge technologies.",
+      longDescription: "We specialize in creating high-performance web applications using React, Next.js, and modern frontend frameworks. Our websites are not just visually appealing but also optimized for search engines, fast loading times, and seamless user experiences across all devices.",
+      features: [
+        "React & Next.js Development",
+        "Responsive & Mobile-First Design", 
+        "SEO Optimization & Performance",
+        "Progressive Web Apps (PWA)",
+        "E-commerce Solutions",
+        "Content Management Systems"
+      ],
+      color: "from-blue-500 to-cyan-500",
+      badge: "Most Popular",
+      price: "Starting from $2,999",
+      delivery: "2-4 weeks"
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description: "Native iOS & Android applications with seamless user experiences, robust functionality, and modern design principles.",
+      longDescription: "Our mobile development team creates cross-platform applications using React Native and Flutter, ensuring your app works perfectly on both iOS and Android while maintaining native performance and user experience.",
+      features: [
+        "React Native & Flutter",
+        "Cross-Platform Development",
+        "App Store Optimization",
+        "Push Notifications & Analytics",
+        "Offline Functionality",
+        "Third-party Integrations"
+      ],
+      color: "from-purple-500 to-pink-500",
+      badge: "Trending",
+      price: "Starting from $4,999",
+      delivery: "4-8 weeks"
+    },
+    {
+      icon: Database,
+      title: "Backend & API Development",
+      description: "Scalable backend solutions with secure APIs, real-time features, cloud infrastructure, and robust database management.",
+      longDescription: "We build powerful backend systems using Node.js, Python, and modern frameworks. Our APIs are designed for scalability, security, and performance, with comprehensive documentation and testing.",
+      features: [
+        "RESTful & GraphQL APIs",
+        "Node.js & Python Development",
+        "PostgreSQL & MongoDB",
+        "Real-time Features",
+        "Cloud Infrastructure (AWS/GCP)",
+        "Microservices Architecture"
+      ],
+      color: "from-green-500 to-emerald-500",
+      badge: "Enterprise Ready",
+      price: "Starting from $3,999",
+      delivery: "3-6 weeks"
+    },
+    {
+      icon: Paintbrush,
+      title: "UI/UX Design",
+      description: "Beautiful, intuitive designs that convert visitors into customers with modern aesthetics and user-centered approach.",
+      longDescription: "Our design team creates stunning user interfaces and experiences that not only look beautiful but also drive conversions and user engagement through strategic design thinking and user research.",
+      features: [
+        "User Research & Testing",
+        "Wireframing & Prototyping",
+        "Visual Design & Branding",
+        "Design Systems Creation",
+        "Figma & Adobe Creative Suite",
+        "Conversion Optimization"
+      ],
+      color: "from-orange-500 to-red-500",
+      badge: "Creative Excellence",
+      price: "Starting from $1,999",
+      delivery: "1-3 weeks"
+    },
+    {
+      icon: Shield,
+      title: "DevOps & Security",
+      description: "Secure deployment pipelines, monitoring, infrastructure management, and comprehensive security audits for your applications.",
+      longDescription: "We ensure your applications are deployed securely and efficiently with automated CI/CD pipelines, comprehensive monitoring, and robust security measures to protect your business and users.",
+      features: [
+        "CI/CD Pipeline Setup",
+        "Docker & Kubernetes",
+        "AWS/GCP Cloud Management",
+        "Security Audits & Testing",
+        "Performance Monitoring",
+        "Backup & Disaster Recovery"
+      ],
+      color: "from-indigo-500 to-purple-600",
+      badge: "Security First",
+      price: "Starting from $2,499",
+      delivery: "1-2 weeks"
+    },
+    {
+      icon: Users,
+      title: "Technology Consulting",
+      description: "Strategic technology consulting to help your business make informed decisions, scale effectively, and optimize processes.",
+      longDescription: "Our experienced consultants help you navigate complex technology decisions, optimize your existing systems, and plan for future growth with strategic technology roadmaps.",
+      features: [
+        "Technology Strategy Planning",
+        "Architecture Review & Design",
+        "Team Training & Mentoring",
+        "Code Audits & Optimization",
+        "Digital Transformation",
+        "Startup Technology Advisory"
+      ],
+      color: "from-teal-500 to-blue-600",
+      badge: "Expert Guidance",
+      price: "Starting from $199/hour",
+      delivery: "Ongoing"
+    }
+  ];
+
+  const stats = [
+    { label: "Projects Completed", value: "150+", icon: CheckCircle },
+    { label: "Happy Clients", value: "98%", icon: Star },
+    { label: "Years Experience", value: "8+", icon: Clock },
+    { label: "Success Rate", value: "100%", icon: TrendingUp }
+  ];
+
   return (
-    <div className="min-h-screen bg-background pt-20">
-      {/* Header */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center gap-4 mb-8">
-          <Button variant="ghost" size="icon" asChild>
-            <Link to="/">
-              <ArrowLeft className="h-5 w-5" />
-            </Link>
-          </Button>
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Our Work
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
+              <Rocket className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Our Services</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6">
+              What We <span className="bg-gradient-primary bg-clip-text text-transparent">Build</span>
             </h1>
-            <p className="text-muted-foreground text-lg mt-2">
-              Showcasing our latest projects and success stories
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
+              From innovative web applications to scalable mobile solutions, we craft digital experiences 
+              that transform ideas into successful businesses and drive meaningful growth.
             </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {stats.map((stat, index) => (
+                <div 
+                  key={stat.label}
+                  className="text-center p-4 rounded-xl bg-background/50 backdrop-blur-sm border border-border/50 animate-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <stat.icon className="h-6 w-6 text-primary mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-soft hover:shadow-primary/20 transition-all duration-300"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="secondary" className="bg-white/90 text-black hover:bg-white">
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Live Demo
+      {/* Services Grid */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <Card 
+                key={service.title} 
+                className="group relative overflow-hidden border-0 bg-gradient-to-br from-background to-background/50 backdrop-blur-sm hover:shadow-elegant transition-all duration-500 transform hover:scale-[1.02] animate-slide-in-right"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                
+                <CardHeader className="relative pb-4">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className={`p-4 rounded-xl bg-gradient-to-br ${service.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 animate-float`} style={{ animationDelay: `${index * 0.2}s` }}>
+                        <service.icon className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-1">
+                          {service.title}
+                        </CardTitle>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="secondary" className="text-xs font-medium">
+                            {service.badge}
+                          </Badge>
+                          <span className="text-sm font-semibold text-primary">{service.price}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm text-muted-foreground flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {service.delivery}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  
+                  <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                    {service.longDescription}
+                  </p>
+                </CardHeader>
+                
+                <CardContent className="relative pt-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <div key={feature} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
+                        <span className="text-muted-foreground font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button variant="default" className="flex-1 group/btn">
+                      <span>Get Quote</span>
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
-                    <Button size="sm" variant="outline" className="border-white/50 text-white hover:bg-white/10">
-                      <Github className="h-4 w-4 mr-1" />
-                      Code
+                    <Button variant="outline" className="flex-1">
+                      Learn More
                     </Button>
                   </div>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">
-                    {project.category}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-primary/10 rounded-lg p-8 border border-primary/20">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
+          {/* CTA Section */}
+          <div className="text-center mt-20 p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border/50 animate-bounce-in" style={{ animationDelay: '0.8s' }}>
+            <h3 className="text-2xl font-bold text-foreground mb-4">
               Ready to Start Your Project?
-            </h2>
+            </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's discuss how we can bring your ideas to life with our proven development expertise.
+              Let's discuss your requirements and create something amazing together. We're here to turn your vision into reality.
             </p>
-            <Button variant="premium" size="lg" asChild>
-              <Link to="/#contact">Get In Touch</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="hero" size="lg" className="animate-glow">
+                Start Your Project Today
+              </Button>
+              <Button variant="outline" size="lg" className="group">
+                Schedule Consultation
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

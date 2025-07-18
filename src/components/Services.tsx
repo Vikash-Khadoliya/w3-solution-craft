@@ -150,75 +150,122 @@ const Services = () => {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+      <section className="py-20 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
+              <Code className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Technology Stack</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Technologies We <span className="bg-gradient-primary bg-clip-text text-transparent">Master</span>
             </h3>
-            <p className="text-muted-foreground">Cutting-edge tools and frameworks that power our solutions</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Cutting-edge tools and frameworks that power our innovative solutions and drive exceptional results
+            </p>
           </div>
           
-          <div className="relative">
-            <div className="flex animate-scroll-right space-x-8 whitespace-nowrap">
-              {/* First set of technologies */}
-              <div className="flex space-x-8 animate-scroll-right">
-                {[
-                  { name: "React", icon: "⚛️" },
-                  { name: "Next.js", icon: "▲" },
-                  { name: "TypeScript", icon: "TS" },
-                  { name: "Tailwind CSS", icon: "🎨" },
-                  { name: "Node.js", icon: "🟢" },
-                  { name: "PostgreSQL", icon: "🐘" },
-                  { name: "MongoDB", icon: "🍃" },
-                  { name: "AWS", icon: "☁️" },
-                  { name: "Docker", icon: "🐳" },
-                  { name: "Firebase", icon: "🔥" },
-                  { name: "Supabase", icon: "⚡" },
-                  { name: "Vercel", icon: "◢" }
-                ].map((tech, index) => (
-                  <div 
-                    key={`first-${tech.name}`}
-                    className="flex flex-col items-center min-w-[120px] p-6 bg-background/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group animate-float"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {tech.icon}
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{tech.name}</span>
+          {/* Primary Technologies Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16">
+            {[
+              { name: "React", icon: "⚛️", color: "from-blue-500 to-cyan-500", desc: "Frontend Framework" },
+              { name: "Next.js", icon: "▲", color: "from-gray-700 to-gray-900", desc: "Full-stack Framework" },
+              { name: "TypeScript", icon: "TS", color: "from-blue-600 to-blue-700", desc: "Type Safety" },
+              { name: "Tailwind", icon: "🎨", color: "from-teal-500 to-blue-600", desc: "CSS Framework" },
+              { name: "Node.js", icon: "🟢", color: "from-green-500 to-green-600", desc: "Backend Runtime" },
+              { name: "PostgreSQL", icon: "🐘", color: "from-blue-500 to-indigo-600", desc: "Database" },
+            ].map((tech, index) => (
+              <div 
+                key={tech.name}
+                className="group relative p-6 bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-elegant transition-all duration-500 transform hover:scale-105 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-5 group-hover:opacity-15 transition-opacity duration-300 rounded-2xl`}></div>
+                <div className="relative text-center">
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                    {tech.icon}
                   </div>
-                ))}
+                  <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-xs text-muted-foreground">{tech.desc}</p>
+                </div>
               </div>
-              
-              {/* Duplicate set for seamless loop */}
-              <div className="flex space-x-8 animate-scroll-right">
-                {[
-                  { name: "React", icon: "⚛️" },
-                  { name: "Next.js", icon: "▲" },
-                  { name: "TypeScript", icon: "TS" },
-                  { name: "Tailwind CSS", icon: "🎨" },
-                  { name: "Node.js", icon: "🟢" },
-                  { name: "PostgreSQL", icon: "🐘" },
-                  { name: "MongoDB", icon: "🍃" },
-                  { name: "AWS", icon: "☁️" },
-                  { name: "Docker", icon: "🐳" },
-                  { name: "Firebase", icon: "🔥" },
-                  { name: "Supabase", icon: "⚡" },
-                  { name: "Vercel", icon: "◢" }
-                ].map((tech, index) => (
-                  <div 
-                    key={`second-${tech.name}`}
-                    className="flex flex-col items-center min-w-[120px] p-6 bg-background/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group animate-float"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {tech.icon}
+            ))}
+          </div>
+
+          {/* Scrolling Technologies Banner */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-background/50 to-background/80 backdrop-blur-sm border border-border/50 p-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5"></div>
+            <div className="relative">
+              <h4 className="text-xl font-bold text-center text-foreground mb-8">
+                And Many More Technologies We Work With
+              </h4>
+              <div className="flex animate-scroll-right space-x-12 whitespace-nowrap">
+                {/* First set */}
+                <div className="flex space-x-12 animate-scroll-right">
+                  {[
+                    { name: "MongoDB", icon: "🍃" },
+                    { name: "AWS", icon: "☁️" },
+                    { name: "Docker", icon: "🐳" },
+                    { name: "Firebase", icon: "🔥" },
+                    { name: "Supabase", icon: "⚡" },
+                    { name: "Vercel", icon: "◢" },
+                    { name: "Python", icon: "🐍" },
+                    { name: "GraphQL", icon: "◈" },
+                    { name: "Redis", icon: "🔴" },
+                    { name: "Prisma", icon: "◦" },
+                    { name: "Figma", icon: "🎨" },
+                    { name: "Stripe", icon: "💳" }
+                  ].map((tech) => (
+                    <div 
+                      key={`first-${tech.name}`}
+                      className="flex items-center gap-3 min-w-[140px] p-4 bg-background/50 backdrop-blur-sm rounded-xl border border-border/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                    >
+                      <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                        {tech.icon}
+                      </div>
+                      <span className="text-sm font-medium text-foreground whitespace-nowrap">{tech.name}</span>
                     </div>
-                    <span className="text-sm font-medium text-foreground">{tech.name}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                
+                {/* Duplicate set for seamless loop */}
+                <div className="flex space-x-12 animate-scroll-right">
+                  {[
+                    { name: "MongoDB", icon: "🍃" },
+                    { name: "AWS", icon: "☁️" },
+                    { name: "Docker", icon: "🐳" },
+                    { name: "Firebase", icon: "🔥" },
+                    { name: "Supabase", icon: "⚡" },
+                    { name: "Vercel", icon: "◢" },
+                    { name: "Python", icon: "🐍" },
+                    { name: "GraphQL", icon: "◈" },
+                    { name: "Redis", icon: "🔴" },
+                    { name: "Prisma", icon: "◦" },
+                    { name: "Figma", icon: "🎨" },
+                    { name: "Stripe", icon: "💳" }
+                  ].map((tech) => (
+                    <div 
+                      key={`second-${tech.name}`}
+                      className="flex items-center gap-3 min-w-[140px] p-4 bg-background/50 backdrop-blur-sm rounded-xl border border-border/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                    >
+                      <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                        {tech.icon}
+                      </div>
+                      <span className="text-sm font-medium text-foreground whitespace-nowrap">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12 animate-bounce-in" style={{ animationDelay: '1s' }}>
+            <Button variant="outline" size="lg" className="group">
+              View All Technologies
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </section>

@@ -26,10 +26,10 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Our Work", href: "/our-work" },
+    { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
     { name: "Careers", href: "/careers" },
   ];
 
@@ -106,7 +106,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {services.map((service) => (
                   <li key={service}>
-                    <span className="text-gray-300">{service}</span>
+                    <a 
+                      href="/our-work" 
+                      className="text-gray-300 hover:text-white transition-colors duration-300"
+                    >
+                      {service}
+                    </a>
                   </li>
                 ))}
               </ul>
