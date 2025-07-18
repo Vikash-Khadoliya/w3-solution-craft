@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   Code, 
   Smartphone, 
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Globe,
@@ -126,10 +128,26 @@ const Services = () => {
                     ))}
                   </div>
 
-                  <Button variant="ghost" className="group/btn w-full justify-between border border-border/50 hover:border-primary/50 hover:bg-primary/5">
-                    <span>Explore Service</span>
-                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                  <div className="flex gap-3">
+                    <Button 
+                      variant="default" 
+                      className="flex-1 group/btn"
+                      onClick={() => {
+                        const routes = {
+                          "Web Development": "/web-development",
+                          "Mobile Apps": "/mobile-apps", 
+                          "Backend & APIs": "/custom-software",
+                          "UI/UX Design": "/ui-ux-design",
+                          "DevOps & Security": "/custom-software",
+                          "Consulting": "/our-work"
+                        };
+                        navigate(routes[service.title] || "/our-work");
+                      }}
+                    >
+                      <span>Explore Service</span>
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}

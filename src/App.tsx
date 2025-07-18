@@ -6,6 +6,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import OurWork from "./pages/OurWork";
+import WebDevelopment from "./pages/WebDevelopment";
+import MobileApps from "./pages/MobileApps";
+import CustomSoftware from "./pages/CustomSoftware";
+import UIUXDesign from "./pages/UIUXDesign";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Careers from "./pages/Careers";
@@ -23,6 +27,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/our-work" element={<OurWork />} />
+            <Route path="/web-development" element={<WebDevelopment />} />
+            <Route path="/mobile-apps" element={<MobileApps />} />
+            <Route path="/custom-software" element={<CustomSoftware />} />
+            <Route path="/ui-ux-design" element={<UIUXDesign />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/careers" element={<Careers />} />

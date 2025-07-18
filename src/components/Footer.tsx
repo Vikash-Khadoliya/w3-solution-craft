@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -34,10 +35,10 @@ const Footer = () => {
   ];
 
   const services = [
-    "Web Development",
-    "Mobile Apps",
-    "Custom Software",
-    "UI/UX Design",
+    { name: "Web Development", href: "/web-development" },
+    { name: "Mobile Apps", href: "/mobile-apps" },
+    { name: "Custom Software", href: "/custom-software" },
+    { name: "UI/UX Design", href: "/ui-ux-design" },
   ];
 
   return (
@@ -87,12 +88,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-300 hover:text-white transition-colors duration-300"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -105,13 +106,13 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service}>
-                    <a 
-                      href="/our-work" 
+                  <li key={service.name}>
+                    <Link 
+                      to={service.href} 
                       className="text-gray-300 hover:text-white transition-colors duration-300"
                     >
-                      {service}
-                    </a>
+                      {service.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
