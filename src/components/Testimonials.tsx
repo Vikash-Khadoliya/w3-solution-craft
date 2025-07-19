@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Globe, Search, MapPin, Briefcase } from "lucide-react";
 
 const testimonials = [
   {
@@ -36,25 +36,33 @@ const platformRatings = [
     platform: "Clutch",
     rating: "4.8",
     maxRating: "5.0",
-    reviews: "12"
+    reviews: "12",
+    icon: Briefcase,
+    color: "text-orange-500"
   },
   {
     platform: "Upwork",
     rating: "4.9",
     maxRating: "5.0",
-    reviews: "15"
+    reviews: "15",
+    icon: Globe,
+    color: "text-green-500"
   },
   {
     platform: "Google",
     rating: "4.9",
     maxRating: "5.0",
-    reviews: "18"
+    reviews: "18",
+    icon: Search,
+    color: "text-blue-500"
   },
   {
     platform: "Freelancer",
     rating: "4.8",
     maxRating: "5.0",
-    reviews: "10"
+    reviews: "10",
+    icon: MapPin,
+    color: "text-purple-500"
   }
 ];
 
@@ -90,7 +98,10 @@ const Testimonials = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-lg text-foreground mb-2">{platform.platform}</h3>
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <platform.icon className={`h-6 w-6 ${platform.color}`} />
+                  <h3 className="font-bold text-lg text-foreground">{platform.platform}</h3>
+                </div>
                 <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
                   {platform.rating}
                 </div>
