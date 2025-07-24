@@ -4,12 +4,12 @@ import { Star, Quote, Globe, Search, MapPin, Briefcase } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    position: "CEO, TechStart Inc.",
-    company: "TechStart Inc.",
+    name: "Joe L. Fernandez",
+    position: "CEO, Fendzusa Inc.",
+    company: "Fendzusa Asset Managment.",
     rating: 5,
     text: "W3 Software Solutions delivered an exceptional e-commerce platform for our business. Their attention to detail and technical expertise exceeded our expectations.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+    avatar: "/src/assets/Joe.jpg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const testimonials = [
     company: "InnovateApp",
     rating: 5,
     text: "The mobile app they developed for us has been a game-changer. Professional, responsive, and delivered on time. Highly recommended!",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+    avatar: "/src/assets/Michael.jpg",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const testimonials = [
     company: "GrowthCo",
     rating: 5,
     text: "Working with W3 was seamless. They understood our vision and created a website that perfectly represents our brand.",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+    avatar: "/src/assets/Emily.jpg",
   }
 ];
 
