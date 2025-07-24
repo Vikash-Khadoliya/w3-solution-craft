@@ -79,6 +79,17 @@ const Testimonials = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Free Consultation Button */}
+        <div className="flex justify-center mb-10">
+          <a
+            href="https://wa.me/917597881864?text=Hello%2C%20I%20am%20interested%20in%20a%20free%20consultation."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-primary/90 transition-colors duration-200"
+          >
+            Get Free Consultation
+          </a>
+        </div>
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
