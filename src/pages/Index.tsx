@@ -9,15 +9,12 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import ScrollProgressBar from "@/components/ScrollProgressBar";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <ScrollProgressBar />
       <Header />
-      <main className="relative">
+      <main>
         <Hero />
         <Services />
         <About />
@@ -29,7 +26,6 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
-      <ScrollToTop />
     </div>
   );
 };

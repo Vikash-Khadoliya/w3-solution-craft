@@ -38,7 +38,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="nav-link text-foreground font-medium hover-scale"
+                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item.name}
               </Link>
@@ -48,7 +48,7 @@ const Header = () => {
           {/* CTA Button & Theme Toggle - Desktop */}
           <div className="hidden md:flex items-center space-x-3">
             <ThemeToggle />
-            <Button variant="hero" size="default" className="interactive-button animate-glow pulse-glow">
+            <Button variant="hero" size="default" className="animate-glow">
               Get Started
             </Button>
           </div>
@@ -73,7 +73,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary transition-all duration-300 font-medium hover:bg-primary/5 rounded-lg hover-scale"
+                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

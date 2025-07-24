@@ -91,7 +91,7 @@ const Services = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title} 
-                className="group interactive-card relative overflow-hidden border-0 bg-gradient-card backdrop-blur-sm hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-slide-in-right hover-lift cursor-pointer"
+                className="group relative overflow-hidden border-0 bg-gradient-to-br from-background to-background/50 backdrop-blur-sm hover:shadow-elegant transition-all duration-500 transform hover:scale-105 animate-slide-in-right"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -131,7 +131,7 @@ const Services = () => {
                   <div className="flex gap-3">
                     <Button 
                       variant="default" 
-                      className="flex-1 group/btn interactive-button hover-glow"
+                      className="flex-1 group/btn"
                       onClick={() => {
                         const routes = {
                           "Web Development": "/web-development",
@@ -145,7 +145,7 @@ const Services = () => {
                       }}
                     >
                       <span>Explore Service</span>
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
                   </div>
                 </CardContent>
@@ -155,12 +155,12 @@ const Services = () => {
 
           <div className="text-center mt-16 animate-bounce-in" style={{ animationDelay: '0.8s' }}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="hero" size="lg" className="interactive-button animate-glow pulse-glow">
+              <Button variant="hero" size="lg" className="animate-glow">
                 Start Your Project
               </Button>
-              <Button variant="outline" size="lg" className="group interactive-button">
+              <Button variant="outline" size="lg" className="group">
                 View Portfolio
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
@@ -196,7 +196,7 @@ const Services = () => {
             ].map((tech, index) => (
               <div 
                 key={tech.name}
-                className="group relative p-6 bg-gradient-card backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-500 transform hover:scale-110 animate-scale-in interactive-card hover-lift cursor-pointer"
+                className="group relative p-6 bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 hover:shadow-elegant transition-all duration-500 transform hover:scale-105 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-5 group-hover:opacity-15 transition-opacity duration-300 rounded-2xl`}></div>
